@@ -16,4 +16,4 @@ Although this would not scale up to more than 4 processes, I did it this way is 
 page faults and reduce internal fragmentation. When a page is chosen to be evicted, it can never be frame 0, as all the page tables for each process is stored there. That way, pages can be swapped out and page
 table entries can be updated seamlessly without a cascade, since a frame with a page table cannot be evicted. For scaling past 4 processes, it would be advisable to not store all page tables in one page, and implement a different page-eviction policy, such as Least Recently Used or Least Frequently Used, instead of the Round Robin algorithm implemented here.
 
-Credit for the creation of the starter code goes to WPI staff of CS3013 C term. The starter code includes the implementation of boiler plate functions in the mmu.c and memsim.c file, as well as writing all the header files.
+Credit for the creation of the starter code goes to WPI staff of CS3013 C term. The starter code includes the implementation of boiler plate functions in the mmu.c, memsim.c, and input.c files, as well as writing all the header files.
