@@ -1,0 +1,60 @@
+Script started on 2024-02-19 03:39:46+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="271" LINES="59"]
+student@cs2324:~/Documents/Projects/Project 3/starting_code_v1$ make
+gcc -c mmu.c -o mmu.o
+gcc -c input.c -o input.o
+gcc -c pagetable.c -o pagetable.o
+gcc -c memsim.c -o memsim.o
+gcc -c instruction.c -o instruction.o
+gcc mmu.o input.o pagetable.o memsim.o instruction.o -o mmu
+student@cs2324:~/Documents/Projects/Project 3/starting_code_v1$ ./mmu < sampleInput.txt
+Instruction? Put page table for PID 0 into physical frame 0 (physical address 0).
+Mapped virtual address 0 (page 0) into physical frame 1.
+Instruction? Error: Virtual page already mapped into physical frame 1.
+Instruction? Mapped virtual address 16 (page 1) into physical frame 2.
+Instruction? Mapped virtual address 32 (page 2) into physical frame 3.
+Instruction? Error: virtual address 35 does not have write permissions.
+Instruction? Stored value 255 at virtual address 19 (physical address 35)
+Instruction? The value 255 was found at virtual address 19 (physical address 35).
+Instruction? Put page table for PID 1 into physical frame 0 (physical address 4).
+Swapped Frame 1 to disk at offset 0.
+Mapped virtual address 19 (page 1) into physical frame 1.
+Instruction? Swapped Frame 2 to disk at offset 16.
+Mapped virtual address 5 (page 0) into physical frame 2.
+Instruction? Put page table for PID 2 into physical frame 0 (physical address 8).
+Swapped Frame 3 to disk at offset 32.
+Mapped virtual address 63 (page 3) into physical frame 3.
+Instruction? Stored value 158 at virtual address 5 (physical address 37)
+Instruction? The value 158 was found at virtual address 5 (physical address 37).
+Instruction? Swapped Frame 1 to disk at offset 80.
+Swapped disk slot 1 into frame 1.
+Virtual page 1 for PID 0 fetched from disk into frame 1.
+The value 255 was found at virtual address 19 (physical address 19).
+Instruction? Stored value 1 at virtual address 48 (physical address 48)
+Instruction? Put page table for PID 3 into physical frame 0 (physical address 12).
+Swapped Frame 2 to disk at offset 64.
+Mapped virtual address 32 (page 2) into physical frame 2.
+Instruction? Swapped Frame 3 to disk at offset 176.
+Swapped disk slot 4 into frame 3.
+Virtual page 0 for PID 1 fetched from disk into frame 3.
+Stored value 15 at virtual address 7 (physical address 55)
+Instruction? Stored value 206 at virtual address 40 (physical address 40)
+Instruction? The value 15 was found at virtual address 7 (physical address 55).
+Instruction? The value 206 was found at virtual address 40 (physical address 40).
+Instruction? End of File.
+student@cs2324:~/Documents/Projects/Project 3/starting_code_v1$ ./mmu <asampleInput2.txt
+Instruction? Put page table for PID 0 into physical frame 0 (physical address 0).
+Mapped virtual address 0 (page 0) into physical frame 1.
+Instruction? Error: The virtual address 16 is not valid.
+Instruction? Incorrectly formatted instruction.
+Value should be NA for the load instruction.
+Instruction? Error: Virtual page already mapped into physical frame 1.
+Instruction? Error: virtual address 48 does not have write permissions.
+Instruction? Error: virtual address 15 does not have write permissions.
+Instruction? Invalid Process Id.  Process Id must be in range 0-3.
+Instruction? Mapped virtual address 16 (page 1) into physical frame 2.
+Instruction? Invalid value for store instruction. Value must be 0-255.
+Instruction? End of File.
+student@cs2324:~/Documents/Projects/Project 3/starting_code_v1$ exit
+exit
+
+Script done on 2024-02-19 03:40:07+00:00 [COMMAND_EXIT_CODE="0"]
