@@ -17,3 +17,5 @@ page faults and reduce internal fragmentation. When a page is chosen to be evict
 table entries can be updated seamlessly without a cascade, since a frame with a page table cannot be evicted. For scaling past 4 processes, it would be advisable to not store all page tables in one page, and implement a different page-eviction policy, such as Least Recently Used or Least Frequently Used, instead of the Round Robin algorithm implemented here.
 
 Credit for the creation of the starter code goes to WPI staff of CS3013 C term. The starter code includes the implementation of boiler plate functions in the mmu.c, memsim.c, and input.c files, as well as writing all the header files.
+
+OS Note: This project was developed on a Linux distribution, so there may be necessary changes to make in order to properly run the project on Windows, MacOS, etc. (e.g., unistd.h library is only compatible with Linux).
